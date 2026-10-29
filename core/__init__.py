@@ -1,0 +1,3 @@
+# core/__init__.py
+# Makes this folder a Python package so you can do:
+#   from core.csp_model import Subject, Teacher, ...
