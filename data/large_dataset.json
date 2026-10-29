@@ -1,0 +1,175 @@
+{
+  "time_structure": {
+    "num_days": 5,
+    "periods_per_day": 7,
+    "break_periods": []
+  },
+  "rooms": [
+    { "room_id": "CR101", "name": "Classroom 101", "capacity": 65, "room_type": "classroom" },
+    { "room_id": "CR102", "name": "Classroom 102", "capacity": 65, "room_type": "classroom" },
+    { "room_id": "CR103", "name": "Classroom 103", "capacity": 65, "room_type": "classroom" },
+    { "room_id": "CR104", "name": "Classroom 104", "capacity": 65, "room_type": "classroom" },
+    { "room_id": "CR201", "name": "Classroom 201", "capacity": 65, "room_type": "classroom" },
+    { "room_id": "CR202", "name": "Classroom 202", "capacity": 65, "room_type": "classroom" },
+    { "room_id": "CR203", "name": "Classroom 203", "capacity": 65, "room_type": "classroom" },
+    { "room_id": "CR204", "name": "Classroom 204", "capacity": 65, "room_type": "classroom" },
+    { "room_id": "LAB01", "name": "Software Lab 1", "capacity": 55, "room_type": "lab" },
+    { "room_id": "LAB02", "name": "Software Lab 2", "capacity": 55, "room_type": "lab" },
+    { "room_id": "LAB03", "name": "Hardware Lab", "capacity": 55, "room_type": "lab" }
+  ],
+  "subjects": [
+    { "subject_id": "CS301", "name": "Operating Systems", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "CS302", "name": "Database Management Systems", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "CS303", "name": "Computer Networks", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "CS304", "name": "Software Engineering", "weekly_hours": 3, "subject_type": "theory" },
+    { "subject_id": "CS305", "name": "Theory of Computation", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "CS306", "name": "Artificial Intelligence", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "CS307", "name": "Web Technologies", "weekly_hours": 3, "subject_type": "theory" },
+    { "subject_id": "EC301", "name": "Microprocessors & Interfacing", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "EC302", "name": "Control Systems", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "EC303", "name": "VLSI Design", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "LAB_OS", "name": "OS Lab", "weekly_hours": 2, "subject_type": "lab", "lab_duration": 2 },
+    { "subject_id": "LAB_DB", "name": "DBMS Lab", "weekly_hours": 2, "subject_type": "lab", "lab_duration": 2 },
+    { "subject_id": "LAB_NW", "name": "Networks Lab", "weekly_hours": 2, "subject_type": "lab", "lab_duration": 2 },
+    { "subject_id": "LAB_MP", "name": "Microprocessor Lab", "weekly_hours": 2, "subject_type": "lab", "lab_duration": 2 }
+  ],
+  "teachers": [
+    { "teacher_id": "T01", "name": "Prof. Dennis Ritchie", "subject_ids": ["CS301", "LAB_OS"], "unavailable_slots": [[0, 0]], "max_weekly_load": 18, "preferences": { "0,1": 2 } },
+    { "teacher_id": "T02", "name": "Dr. Edgar Codd", "subject_ids": ["CS302", "LAB_DB"], "unavailable_slots": [[1, 4]], "max_weekly_load": 18, "preferences": { "1,0": 3 } },
+    { "teacher_id": "T03", "name": "Prof. Andrew Tanenbaum", "subject_ids": ["CS303", "LAB_NW"], "unavailable_slots": [], "max_weekly_load": 18, "preferences": {} },
+    { "teacher_id": "T04", "name": "Dr. Barry Boehm", "subject_ids": ["CS304"], "unavailable_slots": [[2, 2]], "max_weekly_load": 16, "preferences": {} },
+    { "teacher_id": "T05", "name": "Prof. Michael Sipser", "subject_ids": ["CS305"], "unavailable_slots": [], "max_weekly_load": 16, "preferences": { "4,6": 4 } },
+    { "teacher_id": "T06", "name": "Dr. John McCarthy", "subject_ids": ["CS306"], "unavailable_slots": [[3, 1]], "max_weekly_load": 16, "preferences": {} },
+    { "teacher_id": "T07", "name": "Prof. Tim Berners-Lee", "subject_ids": ["CS307"], "unavailable_slots": [], "max_weekly_load": 16, "preferences": {} },
+    { "teacher_id": "T08", "name": "Dr. Federico Faggin", "subject_ids": ["EC301", "LAB_MP"], "unavailable_slots": [[0, 5]], "max_weekly_load": 18, "preferences": {} },
+    { "teacher_id": "T09", "name": "Prof. Rudolf Kalman", "subject_ids": ["EC302"], "unavailable_slots": [], "max_weekly_load": 16, "preferences": { "2,0": 3 } },
+    { "teacher_id": "T10", "name": "Dr. Carver Mead", "subject_ids": ["EC303"], "unavailable_slots": [[4, 2]], "max_weekly_load": 16, "preferences": {} },
+    { "teacher_id": "T11", "name": "Dr. Barbara Liskov", "subject_ids": ["CS301", "LAB_OS"], "unavailable_slots": [], "max_weekly_load": 18, "preferences": {} },
+    { "teacher_id": "T12", "name": "Prof. Jim Gray", "subject_ids": ["CS302", "LAB_DB"], "unavailable_slots": [[1, 0]], "max_weekly_load": 18, "preferences": {} },
+    { "teacher_id": "T13", "name": "Dr. Vint Cerf", "subject_ids": ["CS303", "LAB_NW"], "unavailable_slots": [], "max_weekly_load": 18, "preferences": {} },
+    { "teacher_id": "T14", "name": "Prof. Donald Knuth", "subject_ids": ["CS305"], "unavailable_slots": [[3, 5]], "max_weekly_load": 16, "preferences": {} },
+    { "teacher_id": "T15", "name": "Dr. Marvin Minsky", "subject_ids": ["CS306"], "unavailable_slots": [], "max_weekly_load": 16, "preferences": {} },
+    { "teacher_id": "T16", "name": "Prof. Gordon Moore", "subject_ids": ["EC303", "LAB_MP"], "unavailable_slots": [[2, 6]], "max_weekly_load": 18, "preferences": {} }
+  ],
+  "classes": [
+    {
+      "class_id": "CSE-3A",
+      "name": "CSE 3rd Year Sec A",
+      "strength": 50,
+      "subject_ids": ["CS301", "CS302", "CS303", "CS304", "LAB_OS", "LAB_DB"],
+      "lunch_break_period": 3
+    },
+    {
+      "class_id": "CSE-3B",
+      "name": "CSE 3rd Year Sec B",
+      "strength": 50,
+      "subject_ids": ["CS301", "CS302", "CS303", "CS305", "LAB_OS", "LAB_NW"],
+      "lunch_break_period": 3
+    },
+    {
+      "class_id": "CSE-3C",
+      "name": "CSE 3rd Year Sec C",
+      "strength": 50,
+      "subject_ids": ["CS301", "CS302", "CS306", "CS307", "LAB_OS", "LAB_DB"],
+      "lunch_break_period": 3
+    },
+    {
+      "class_id": "IT-3A",
+      "name": "IT 3rd Year Sec A",
+      "strength": 48,
+      "subject_ids": ["CS301", "CS302", "CS303", "CS307", "LAB_DB", "LAB_NW"],
+      "lunch_break_period": 3
+    },
+    {
+      "class_id": "IT-3B",
+      "name": "IT 3rd Year Sec B",
+      "strength": 48,
+      "subject_ids": ["CS302", "CS303", "CS304", "CS307", "LAB_DB", "LAB_NW"],
+      "lunch_break_period": 3
+    },
+    {
+      "class_id": "ECE-3A",
+      "name": "ECE 3rd Year Sec A",
+      "strength": 45,
+      "subject_ids": ["EC301", "EC302", "EC303", "CS301", "LAB_MP"],
+      "lunch_break_period": 3
+    },
+    {
+      "class_id": "ECE-3B",
+      "name": "ECE 3rd Year Sec B",
+      "strength": 45,
+      "subject_ids": ["EC301", "EC302", "EC303", "CS303", "LAB_MP"],
+      "lunch_break_period": 3
+    },
+    {
+      "class_id": "AI-3A",
+      "name": "AI/DS 3rd Year Sec A",
+      "strength": 46,
+      "subject_ids": ["CS302", "CS305", "CS306", "CS307", "LAB_DB"],
+      "lunch_break_period": 3
+    }
+  ],
+  "subject_teacher_map": {
+    "CSE-3A": {
+      "CS301": "T01",
+      "CS302": "T02",
+      "CS303": "T03",
+      "CS304": "T04",
+      "LAB_OS": "T01",
+      "LAB_DB": "T02"
+    },
+    "CSE-3B": {
+      "CS301": "T11",
+      "CS302": "T12",
+      "CS303": "T13",
+      "CS305": "T05",
+      "LAB_OS": "T11",
+      "LAB_NW": "T03"
+    },
+    "CSE-3C": {
+      "CS301": "T01",
+      "CS302": "T02",
+      "CS306": "T06",
+      "CS307": "T07",
+      "LAB_OS": "T01",
+      "LAB_DB": "T02"
+    },
+    "IT-3A": {
+      "CS301": "T11",
+      "CS302": "T12",
+      "CS303": "T03",
+      "CS307": "T07",
+      "LAB_DB": "T12",
+      "LAB_NW": "T13"
+    },
+    "IT-3B": {
+      "CS302": "T02",
+      "CS303": "T13",
+      "CS304": "T04",
+      "CS307": "T07",
+      "LAB_DB": "T12",
+      "LAB_NW": "T13"
+    },
+    "ECE-3A": {
+      "EC301": "T08",
+      "EC302": "T09",
+      "EC303": "T10",
+      "CS301": "T11",
+      "LAB_MP": "T08"
+    },
+    "ECE-3B": {
+      "EC301": "T08",
+      "EC302": "T09",
+      "EC303": "T16",
+      "CS303": "T03",
+      "LAB_MP": "T16"
+    },
+    "AI-3A": {
+      "CS302": "T12",
+      "CS305": "T14",
+      "CS306": "T15",
+      "CS307": "T07",
+      "LAB_DB": "T12"
+    }
+  }
+}

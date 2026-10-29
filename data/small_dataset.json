@@ -1,0 +1,117 @@
+{
+  "time_structure": {
+    "num_days": 5,
+    "periods_per_day": 6,
+    "break_periods": []
+  },
+  "rooms": [
+    { "room_id": "R101", "name": "Classroom 101", "capacity": 60, "room_type": "classroom" },
+    { "room_id": "R102", "name": "Classroom 102", "capacity": 60, "room_type": "classroom" },
+    { "room_id": "R103", "name": "Classroom 103", "capacity": 60, "room_type": "classroom" },
+    { "room_id": "L201", "name": "Computer Lab 1", "capacity": 50, "room_type": "lab" }
+  ],
+  "subjects": [
+    { "subject_id": "CS201", "name": "Data Structures", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "CS202", "name": "Discrete Mathematics", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "CS203", "name": "Digital Logic", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "CS204", "name": "Computer Organization", "weekly_hours": 3, "subject_type": "theory" },
+    { "subject_id": "CS205", "name": "Object Oriented Programming", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "CS206", "name": "Signals & Systems", "weekly_hours": 4, "subject_type": "theory" },
+    { "subject_id": "CS207L", "name": "Data Structures Lab", "weekly_hours": 2, "subject_type": "lab", "lab_duration": 2 }
+  ],
+  "teachers": [
+    {
+      "teacher_id": "T01",
+      "name": "Dr. Alan Turing",
+      "subject_ids": ["CS201"],
+      "unavailable_slots": [[0, 0]],
+      "max_weekly_load": 16,
+      "preferences": { "0,1": 2, "4,5": 5 }
+    },
+    {
+      "teacher_id": "T02",
+      "name": "Prof. Ada Lovelace",
+      "subject_ids": ["CS202"],
+      "unavailable_slots": [[2, 4]],
+      "max_weekly_load": 16,
+      "preferences": { "1,0": 3 }
+    },
+    {
+      "teacher_id": "T03",
+      "name": "Dr. Claude Shannon",
+      "subject_ids": ["CS203"],
+      "unavailable_slots": [],
+      "max_weekly_load": 16,
+      "preferences": {}
+    },
+    {
+      "teacher_id": "T04",
+      "name": "Prof. John von Neumann",
+      "subject_ids": ["CS204"],
+      "unavailable_slots": [[1, 1]],
+      "max_weekly_load": 16,
+      "preferences": {}
+    },
+    {
+      "teacher_id": "T05",
+      "name": "Dr. Grace Hopper",
+      "subject_ids": ["CS205", "CS207L"],
+      "unavailable_slots": [],
+      "max_weekly_load": 18,
+      "preferences": { "3,0": 4 }
+    },
+    {
+      "teacher_id": "T06",
+      "name": "Prof. Norbert Wiener",
+      "subject_ids": ["CS206"],
+      "unavailable_slots": [[4, 0]],
+      "max_weekly_load": 16,
+      "preferences": {}
+    }
+  ],
+  "classes": [
+    {
+      "class_id": "CSE-2A",
+      "name": "CSE 2nd Year Sec A",
+      "strength": 45,
+      "subject_ids": ["CS201", "CS202", "CS203", "CS204", "CS207L"],
+      "lunch_break_period": 3
+    },
+    {
+      "class_id": "CSE-2B",
+      "name": "CSE 2nd Year Sec B",
+      "strength": 45,
+      "subject_ids": ["CS201", "CS202", "CS204", "CS205", "CS207L"],
+      "lunch_break_period": 3
+    },
+    {
+      "class_id": "ECE-2A",
+      "name": "ECE 2nd Year Sec A",
+      "strength": 40,
+      "subject_ids": ["CS202", "CS203", "CS204", "CS206"],
+      "lunch_break_period": 3
+    }
+  ],
+  "subject_teacher_map": {
+    "CSE-2A": {
+      "CS201": "T01",
+      "CS202": "T02",
+      "CS203": "T03",
+      "CS204": "T04",
+      "CS207L": "T05"
+    },
+    "CSE-2B": {
+      "CS201": "T01",
+      "CS202": "T02",
+      "CS204": "T04",
+      "CS205": "T05",
+      "CS207L": "T05"
+    },
+    "ECE-2A": {
+      "CS202": "T02",
+      "CS203": "T03",
+      "CS204": "T04",
+      "CS206": "T06"
+    }
+  }
+}

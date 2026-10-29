@@ -1,0 +1,11 @@
+Dataset,Algorithm,Success,Time (s),Hard Violations,Soft Penalty,Total Cost
+Small,Backtracking (Baseline),True,0.0171,0,151,151
+Small,Backtracking (MRV+Deg+FC),True,0.164,0,149,149
+Small,Min-Conflicts Search,True,0.0845,0,59,59
+Small,Simulated Annealing,True,0.5825,0,22,22
+Small,Hybrid CSP + SA,True,0.4895,0,24,24
+Large,Backtracking (Baseline),True,0.5099,0,479,479
+Large,Backtracking (MRV+Deg+FC),True,5.8682,0,389,389
+Large,Min-Conflicts Search,True,2.4687,0,218,218
+Large,Simulated Annealing,False,1.7918,5,167,5167
+Large,Hybrid CSP + SA,True,7.8226,0,118,118
