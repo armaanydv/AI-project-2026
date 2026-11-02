@@ -9,8 +9,8 @@ Features:
    - Backtracking CSP (Baseline)
    - Backtracking CSP (MRV + Degree Heuristic + Forward Checking)
    - Min-Conflicts Local Search
-   - Simulated Annealing (Bonus 1)
-   - Hybrid CSP + Simulated Annealing (Bonus 2)
+   - Simulated Annealing
+   - Hybrid CSP + Simulated Annealing
 3. Responsive Card-Based Timetable Grid:
    - Multi-period Lab spanning with cyan accent styling
    - Theory session cards with indigo badges
@@ -25,6 +25,7 @@ Features:
 
 from __future__ import annotations
 
+import base64
 import io
 import json
 import time
@@ -158,24 +159,30 @@ header[data-testid="stHeader"] {
     white-space: nowrap;
 }
 .app-icon-squircle {
-    width: 36px;
-    height: 36px;
-    border-radius: 9px;
-    background: #5B6BFA;
+    width: 38px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(91, 107, 250, 0.4);
     flex-shrink: 0;
+    filter: drop-shadow(0 2px 8px rgba(67, 143, 254, 0.45));
 }
 .app-brand-name {
     font-family: 'Inter', sans-serif;
-    font-size: 13.5px;
+    font-size: 26px;
     font-weight: 700;
     color: #F5F7FA;
     letter-spacing: 0.2px;
-    line-height: 18px;
+    line-height: 30px;
     white-space: nowrap;
+}
+.app-brand-discription {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #8F9AA8;
+    letter-spacing: 0.2px;
+    line-height: 18px;
 }
 
 .nav-breadcrumbs {
@@ -269,7 +276,7 @@ header[data-testid="stHeader"] {
 }
 .workspace-heading {
     font-family: 'Inter', sans-serif;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
     color: #F5F7FA;
     margin: 0;
@@ -2503,21 +2510,20 @@ with st.sidebar:
     algorithm = st.selectbox(
         "Select Technique",
         [
-            "Hybrid CSP + SA (Bonus 2)",
+            "Hybrid CSP + SA",
             "Backtracking CSP (MRV + Degree + FC)",
             "Backtracking CSP (Baseline)",
             "Min-Conflicts Local Search",
-            "Simulated Annealing (Bonus 1)",
+            "Simulated Annealing",
         ],
         index=0,
         label_visibility="collapsed",
     )
 
     # Dynamic Hyperparameters in minimalist card
-    st.markdown('<div style="background:#0E131A; border:1px solid #1B2530; border-radius:8px; padding:12px; margin-top:8px;">', unsafe_allow_html=True)
     seed = st.number_input("Random Seed", value=42, step=1)
 
-    if algorithm == "Hybrid CSP + SA (Bonus 2)":
+    if algorithm == "Hybrid CSP + SA":
         bt_timeout = st.slider("Stage 1 BT Timeout (s)", min_value=5, max_value=30, value=15, step=5)
         hybrid_iters = st.slider("Stage 2 SA Iterations", min_value=300, max_value=3000, value=1200, step=100)
     elif "Backtracking" in algorithm:
@@ -2525,7 +2531,7 @@ with st.sidebar:
     elif algorithm == "Min-Conflicts Local Search":
         max_iters = st.slider("Max Iterations", min_value=500, max_value=5000, value=2000, step=250)
         p_walk = st.slider("Random Walk Probability", min_value=0.0, max_value=0.20, value=0.06, step=0.01)
-    elif algorithm == "Simulated Annealing (Bonus 1)":
+    elif algorithm == "Simulated Annealing":
         t0 = st.number_input("Initial Temp (T0)", value=500.0, step=50.0)
         cooling = st.slider("Cooling Rate (alpha)", min_value=0.950, max_value=0.999, value=0.993, step=0.001)
         sa_iters = st.slider("Max Iterations", min_value=500, max_value=5000, value=2000, step=250)
@@ -2648,7 +2654,7 @@ if (generate_btn or st.session_state.pop("trigger_generation", False)) and st.se
                 mc_res.cost_history,
             )
 
-        elif algorithm == "Simulated Annealing (Bonus 1)":
+        elif algorithm == "Simulated Annealing":
             sa_solver = SimulatedAnnealingSolver(
                 dataset,
                 initial_temp=float(t0),
@@ -2678,7 +2684,7 @@ if (generate_btn or st.session_state.pop("trigger_generation", False)) and st.se
                 sa_res.cost_history,
             )
 
-        elif algorithm == "Hybrid CSP + SA (Bonus 2)":
+        elif algorithm == "Hybrid CSP + SA":
             hy_solver = HybridSolver(
                 dataset,
                 sa_max_iterations=int(hybrid_iters),
@@ -2711,25 +2717,23 @@ if (generate_btn or st.session_state.pop("trigger_generation", False)) and st.se
 # ---------------------------------------------------------------------------
 # 6. MAIN WORKSPACE VIEW (FIGMA OBSIDIAN DARK MATCH)
 # ---------------------------------------------------------------------------
-st.html(
-    """
+# Load local logo and encode to base64 so browser renders it without 404 network error
+_logo_file = Path(__file__).parent / "app_logo.svg"
+if _logo_file.exists():
+    _logo_b64 = base64.b64encode(_logo_file.read_bytes()).decode("utf-8")
+    _logo_img_html = f'<img src="data:image/svg+xml;base64,{_logo_b64}" alt="SCHEDORA Logo" width="36" height="36" style="display:block; object-fit:contain;" />'
+else:
+    _logo_img_html = ""
+
+st.markdown(
+    f"""
     <div class="top-nav-bar">
         <div class="nav-brand-group">
             <div class="app-icon-squircle">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="4" width="18" height="17" rx="3" ry="3"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="9" x2="21" y2="9"></line>
-                    <rect x="7" y="12" width="2" height="2" rx="0.5" fill="#FFFFFF"></rect>
-                    <rect x="11" y="12" width="2" height="2" rx="0.5" fill="#FFFFFF"></rect>
-                    <rect x="15" y="12" width="2" height="2" rx="0.5" fill="#FFFFFF"></rect>
-                    <rect x="7" y="16" width="2" height="2" rx="0.5" fill="#FFFFFF"></rect>
-                    <rect x="11" y="16" width="2" height="2" rx="0.5" fill="#FFFFFF"></rect>
-                    <rect x="15" y="16" width="2" height="2" rx="0.5" fill="#FFFFFF"></rect>
-                </svg>
+                {_logo_img_html}
             </div>
-            <span class="app-brand-name">AI BASED TIMETABLE SCHEDULER</span>
+            <span class="app-brand-name">SCHEDORA</span>
+            <span class="app-brand-discription">AI BASED TIMETABLE SCHEDULER</span>
         </div>
         <div class="nav-breadcrumbs">
             <span class="breadcrumb-muted">College workspace</span>
@@ -2738,16 +2742,10 @@ st.html(
             <span class="breadcrumb-year">2025-29</span>
         </div>
         <div class="nav-controls">
-            <div class="theme-pill">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8F9AA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                <span>Dark</span>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8F9AA8" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </div>
         </div>
     </div>
-    """
+    """,
+    unsafe_allow_html=True,
 )
 
 # Workspace Header with Timetable workspace and Unsaved edit badge

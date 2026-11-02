@@ -85,7 +85,7 @@ def run_benchmark():
         })
 
         # 4. Simulated Annealing
-        print(f"Running: Simulated Annealing (Bonus 1)...")
+        print(f"Running: Simulated Annealing...")
         sa_iters = 1000 if d_name == "Small" else 2000
         s_sa = SimulatedAnnealingSolver(ds, max_iterations=sa_iters, seed=42)
         res_sa = s_sa.solve()
@@ -100,7 +100,7 @@ def run_benchmark():
         })
 
         # 5. Hybrid CSP + SA
-        print(f"Running: Hybrid CSP + SA (Bonus 2)...")
+        print(f"Running: Hybrid CSP + SA...")
         hy_iters = 600 if d_name == "Small" else 1200
         s_hy = HybridSolver(ds, sa_max_iterations=hy_iters, bt_timeout=15.0, seed=42)
         res_hy = s_hy.solve()

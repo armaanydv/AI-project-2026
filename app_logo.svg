@@ -1,0 +1,60 @@
+<svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Top Binder Rings -->
+    <rect x="18" y="4" width="7" height="16" rx="3.5" fill="#FFFFFF" stroke="#438FFE" stroke-width="3"/>
+    <rect x="36" y="4" width="7" height="16" rx="3.5" fill="#FFFFFF" stroke="#438FFE" stroke-width="3"/>
+    <rect x="54" y="4" width="7" height="16" rx="3.5" fill="#FFFFFF" stroke="#438FFE" stroke-width="3"/>
+    <rect x="72" y="4" width="7" height="16" rx="3.5" fill="#FFFFFF" stroke="#438FFE" stroke-width="3"/>
+    
+    <!-- Main Calendar Body with Folded Corner -->
+    <path d="M 12 26 C 12 18 16 14 24 14 L 76 14 C 84 14 88 18 88 26 L 88 68 L 68 88 L 24 88 C 16 88 12 84 12 76 Z" 
+          fill="#FFFFFF" stroke="#438FFE" stroke-width="4.5" stroke-linejoin="round"/>
+          
+    <!-- Calendar Blue Header Bar -->
+    <path d="M 14.5 25 C 14.5 19 17.5 16 24 16 L 76 16 C 82.5 16 85.5 19 85.5 25 L 85.5 30 L 14.5 30 Z" 
+          fill="#75ACFF" stroke="#438FFE" stroke-width="3.5" stroke-linejoin="round"/>
+          
+    <!-- Folded Corner Flap at Bottom Right -->
+    <path d="M 68 86 L 68 70 C 68 69 69 68 70 68 L 86 68 Z" 
+          fill="#75ACFF" stroke="#438FFE" stroke-width="3.5" stroke-linejoin="round"/>
+          
+    <!-- Calendar Grid Outer Boundary & Inner Grid -->
+    <rect x="22" y="37" width="58" height="38" rx="2" fill="none" stroke="#438FFE" stroke-width="2.5"/>
+    
+    <!-- Horizontal Grid Lines -->
+    <line x1="22" y1="49.5" x2="80" y2="49.5" stroke="#438FFE" stroke-width="2.5"/>
+    <line x1="22" y1="62" x2="71" y2="62" stroke="#438FFE" stroke-width="2.5"/>
+    
+    <!-- Vertical Grid Lines -->
+    <line x1="33.6" y1="37" x2="33.6" y2="57" stroke="#438FFE" stroke-width="2.5"/>
+    <line x1="45.2" y1="37" x2="45.2" y2="62" stroke="#438FFE" stroke-width="2.5"/>
+    <line x1="56.8" y1="37" x2="56.8" y2="75" stroke="#438FFE" stroke-width="2.5"/>
+    <line x1="68.4" y1="37" x2="68.4" y2="68" stroke="#438FFE" stroke-width="2.5"/>
+    
+    <!-- Shaded First Column Cells -->
+    <rect x="23.5" y="38.5" width="8.6" height="9.5" fill="#A7CCFF"/>
+    <rect x="23.5" y="51" width="8.6" height="9.5" fill="#A7CCFF"/>
+    
+    <!-- Clock Circle (Overlapping Bottom Left) -->
+    <circle cx="43" cy="74" r="21" fill="#FFFFFF" stroke="#438FFE" stroke-width="5"/>
+    
+    <!-- Clock Hour Ticks -->
+    <line x1="43" y1="57" x2="43" y2="61" stroke="#438FFE" stroke-width="3" stroke-linecap="round"/>
+    <line x1="60" y1="74" x2="56" y2="74" stroke="#438FFE" stroke-width="3" stroke-linecap="round"/>
+    <line x1="43" y1="91" x2="43" y2="87" stroke="#438FFE" stroke-width="3" stroke-linecap="round"/>
+    <line x1="26" y1="74" x2="30" y2="74" stroke="#438FFE" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Diagonal Ticks -->
+    <line x1="52" y1="60" x2="50" y2="63.5" stroke="#438FFE" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="57" y1="65" x2="53.5" y2="67" stroke="#438FFE" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="57" y1="83" x2="53.5" y2="81" stroke="#438FFE" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="52" y1="88" x2="50" y2="84.5" stroke="#438FFE" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="34" y1="88" x2="36" y2="84.5" stroke="#438FFE" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="29" y1="83" x2="32.5" y2="81" stroke="#438FFE" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="29" y1="65" x2="32.5" y2="67" stroke="#438FFE" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="34" y1="60" x2="36" y2="63.5" stroke="#438FFE" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Clock Hands (Minute at 12, Hour at 4) -->
+    <line x1="43" y1="74" x2="43" y2="63" stroke="#438FFE" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="43" y1="74" x2="51" y2="80" stroke="#438FFE" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="43" cy="74" r="2.5" fill="#438FFE"/>
+</svg>

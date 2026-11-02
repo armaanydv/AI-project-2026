@@ -1,7 +1,7 @@
 """
 core/hybrid.py
 ==============
-Hybrid CSP + Simulated Annealing Solver (Bonus 2: +6 marks).
+Hybrid CSP + Simulated Annealing Solver.
 
 Two-Stage Pipeline Architecture:
 --------------------------------
